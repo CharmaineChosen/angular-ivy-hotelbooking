@@ -1,0 +1,121 @@
+<div *ngIf="!name; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+
+        <h1>Hotel Booking</h1>
+
+        <label>Name
+          <input type="text" formControlName="name">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+
+      <label>Surname
+        <input type="text" formControlName="surname">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['surname'].valid && rForm.controls['surname'].touched">{{ titleAlert }}</div>
+
+      <label>Email Address
+        <input type="text" formControlName="email">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
+
+      <label>Contact
+        <input type="text" formControlName="contact">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['contact'].valid && rForm.controls['contact'].touched">{{ titleAlert }}</div>
+
+      <label>Id Number
+        <input type="text" formControlName="idnumber">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['idnumber'].valid && rForm.controls['idnumber'].touched">{{ titleAlert }}</div>
+
+      <label>Types of Rooms</label>
+      <select id="room" name="room" 
+      [(ngModel)]="room" class="form-control">
+      <option value="1">Single</option>
+      <option value="2">Double</option>
+      <option value="3">Triple</option>
+      <option value="4">Queen</option>
+      <option value="5">King</option>
+
+      </select>
+
+
+      <input type="submit" class="button expanded" value="Submit Form">
+
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <p>{{name}}</p>
+
+      <p>{{surname}}</p>
+
+      <p>{{email}}</p>
+
+      <p>{{contact}}</p>
+
+      <p>{{idnumber}}</p>
+
+      <p>{{room}}</p>
+
+    </div>
+  </div>
+</ng-template>
+
+<br/>
+
+<div *ngIf="!name; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+
+        <h1>Card Details</h1>
+
+        <label>Card Number
+          <input type="text" formControlName="cardnumber">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['cardnumber'].valid && rForm.controls['cardnumber'].touched">{{ titleAlert }}</div>
+
+      <label>Expiry date
+          <input type="text" formControlName="expiry">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['expiry'].valid && rForm.controls['expiry'].touched">{{ titleAlert }}</div>
+
+      <label>Cardholder name
+          <input type="text" formControlName="cardholder">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['cardholder'].valid && rForm.controls['cardholder'].touched">{{ titleAlert }}</div>
+
+      <label>CVC Number
+          <input type="text" formControlName="cvcnumber">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['cvcnumber'].valid && rForm.controls['cvcnumber'].touched">{{ titleAlert }}</div>
+
+      <input type="submit" class="button expanded" value="Submit Form">
+
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <p>{{cardnumber}}</p>
+
+      <p>{{expiry}}</p>
+
+      <p>{{cardholder}}</p>
+
+      <p>{{cvcnumber}}</p>
+      
+
+    </div>
+  </div>
+</ng-template>

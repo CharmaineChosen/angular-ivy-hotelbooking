@@ -1,0 +1,49 @@
+<div *ngIf="!name; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+
+        <h1>Card Details</h1>
+
+        <label>Card Number
+          <input type="text" formControlName="cardnumber">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['cardnumber'].valid && rForm.controls['cardnumber'].touched">{{ titleAlert }}</div>
+
+      <label>Expiry date
+          <input type="text" formControlName="expiry">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['expiry'].valid && rForm.controls['expiry'].touched">{{ titleAlert }}</div>
+
+      <label>Cardholder name
+          <input type="text" formControlName="cardholder">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['cardholder'].valid && rForm.controls['cardholder'].touched">{{ titleAlert }}</div>
+
+      <label>CVC Number
+          <input type="text" formControlName="cvcnumber">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['cvcnumber'].valid && rForm.controls['cvcnumber'].touched">{{ titleAlert }}</div>
+
+      <input type="submit" class="button expanded" value="Submit Form">
+
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <p>{{cardnumber}}</p>
+
+      <p>{{expiry}}</p>
+
+      <p>{{cardholder}}</p>
+
+      <p>{{cvcnumber}}</p>
+      
+
+    </div>
+  </div>
+</ng-template>

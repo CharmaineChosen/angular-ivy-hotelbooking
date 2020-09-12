@@ -1,0 +1,53 @@
+<div>
+  <form [formGroup]="rForm" (ngSubmit)="addPost()">
+    <div class="form-container">
+      <div class="row columns">
+
+        <h1>Hotel Booking</h1>
+
+        <label>Name
+          <input type="text" formControlName="firstname">
+        </label>
+      <div class="alert" *ngIf="!rForm.controls['firstname'].valid && rForm.controls['firstname'].touched">{{ titleAlert }}</div>
+
+      <label>Surname
+        <input type="text" formControlName="surname">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['surname'].valid && rForm.controls['surname'].touched">{{ titleAlert }}</div>
+
+      <label>Email Address
+        <input type="text" formControlName="email">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
+
+      <label>Contact
+        <input type="text" formControlName="contact">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['contact'].valid && rForm.controls['contact'].touched">{{ titleAlert }}</div>
+
+      <label>Id Number
+        <input type="text" formControlName="idnumber">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['idnumber'].valid && rForm.controls['idnumber'].touched">{{ titleAlert }}</div>
+
+      <label>Types of Rooms</label>
+      <select id="room" name="room" 
+      [(ngModel)]="room" class="form-control">
+      <option value="1">Single</option>
+      <option value="2">Double</option>
+      <option value="3">Triple</option>
+      <option value="4">Queen</option>
+      <option value="5">King</option>
+
+      </select>
+
+
+     <button class="button expanded ">Submit</button>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
